@@ -12,5 +12,12 @@
     "cli"
   ],
   "author": "Simon Brix",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
 }
