@@ -1,0 +1,16 @@
+{
+  "name": "tweebler-cli",
+  "version": "1.0.0",
+  "description": "CLI to generate and post weekly Last FM updates to Twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lastfm",
+    "twitter",
+    "cli"
+  ],
+  "author": "Simon Brix",
+  "license": "ISC"
+}
