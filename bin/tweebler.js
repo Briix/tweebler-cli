@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 var program = require('commander')
 var request = require('request')
 
-var version = '1.0.0'
+var version = '1.0.1'
 var API_BASE = 'http://ws.audioscrobbler.com/2.0/'
 
 var urlOptions = {
