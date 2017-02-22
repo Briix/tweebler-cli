@@ -11,7 +11,7 @@
     "cli"
   ],
   "author": "Simon Brix",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
     "request": "^2.79.0"
