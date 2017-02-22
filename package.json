@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CLI to generate weekly Last FM updates for Twitter",
   "bin": {
-    "tweebler": "./bin/cli.js"
+    "tweebler": "./bin/tweebler.js"
   },
   "keywords": [
     "lastfm",
