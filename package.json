@@ -1,6 +1,6 @@
 {
   "name": "tweebler-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to generate weekly Last FM updates for Twitter",
   "bin": {
     "tweebler": "./bin/tweebler.js"
