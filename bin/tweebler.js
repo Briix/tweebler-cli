@@ -6,7 +6,8 @@ var API_BASE = 'http://ws.audioscrobbler.com/2.0/'
 
 var urlOptions = {
   method: 'user.gettopartists',
-  api_key: process.env.LASTFM_APIKEY,
+  api_key: program.key || process.env.LASTFM_APIKEY,
+  user: program.user || undefined,
   period: '7day',
   format: 'json'
 }
@@ -15,7 +16,10 @@ program
   .version(version)
   .option('-u, --user <username>', 'Specify which user to generate top artists from')
   .option('-n, --number <n>', 'Number of top artists to return')
+  .option('-k, --key', 'LastFM API key')
   .parse(process.argv)
+
+var topArtistsNo = parseInt(program.number, 10)
 
 if (program.user) {
   urlOptions.user = program.user
@@ -34,8 +38,6 @@ function lastfmCallback (err, resp, body) {
 
 function formatArtists (artists) {
   var topArtists = []
-  var number = parseInt(program.number, 10)
-  var topArtistsNo = number || 3
 
   for (var i = 0; i < artists.length && i < topArtistsNo; i++) {
     topArtists.push(`${artists[i].name} (${artists[i].playcount})`)
