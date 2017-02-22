@@ -3,8 +3,15 @@
 var program = require('commander')
 var request = require('request')
 
-var version = '1.0.1'
+var version = '1.0.2'
 var API_BASE = 'http://ws.audioscrobbler.com/2.0/'
+
+program
+  .version(version)
+  .option('-u, --user <username>', 'Specify which user to generate top artists from')
+  .option('-n, --number <n>', 'Number of top artists to return')
+  .option('-k, --key', 'LastFM API key')
+  .parse(process.argv)
 
 var urlOptions = {
   method: 'user.gettopartists',
@@ -14,14 +21,7 @@ var urlOptions = {
   format: 'json'
 }
 
-program
-  .version(version)
-  .option('-u, --user <username>', 'Specify which user to generate top artists from')
-  .option('-n, --number <n>', 'Number of top artists to return')
-  .option('-k, --key', 'LastFM API key')
-  .parse(process.argv)
-
-var topArtistsNo = parseInt(program.number, 10)
+var topArtistsNo = parseInt(program.number, 10) || 3
 
 if (program.user) {
   urlOptions.user = program.user
